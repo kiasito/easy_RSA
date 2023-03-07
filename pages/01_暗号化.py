@@ -14,7 +14,7 @@ raw_text = st.text_input("暗号化したい文字列を入力")
 
 st.write("①　あなたが暗号化したい文章は「" + raw_text + "」です。")
 
-pocket_bell_text = 111
+pocket_bell_text = 1111
 
 st.write("②　上記の平文を暗号化すると、「" + str(pocket_bell_text) + "」になります。")
 
