@@ -28,12 +28,11 @@ sq = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67,
 p = st.selectbox("③　0~100 内の素数( p )を選択", sp)
 q = st.selectbox("④　0~100 内の素数( q )を選択", sq)
 
-
-#if p == q:
+# if p == q:
 #    st.write("pとqが同じ数字のため、暗号化を実行できません。pとqは別々の数字にしてください。")
-#else:
+# else:
 #    st.write("p=" + p + "、q=" + q)
 
-n = int(p) * int(q)
+n = p * q
 
-st.write("⑤　n=pq　nは" + p + "×" + q + "で" + n + "になります。")
+st.write("⑤　n=pq　nは" + str(p) + "×" + str(q) + "で" + str(n) + "になります。")
