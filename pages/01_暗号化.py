@@ -80,3 +80,6 @@ else:
             sm = range(1, e, 1)
 
             m = st.selectbox("m を選択してください（1 ≦ m ≦ " + str(e - 1) + "）", sm)
+
+            if (-1 % e) != (z * m % e):
+                st.write("【エラー】「 zm を e で割った余り 」と「 -1 を e で割った余り 」が等しくありません")
