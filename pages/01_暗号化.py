@@ -22,3 +22,4 @@ else:
     pocket_bell_text = 1111
 
     st.write("②　上記の平文を暗号化すると、「" + str(pocket_bell_text) + "」になります。")
+    st.write("受け取った「公開鍵」を入力してください。")
