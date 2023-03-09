@@ -62,4 +62,4 @@ else:
             st.write(
                 " e ( " + str(e) + " ) は z ( " + str(z) + " ) を割ることができます。")
             st.write(
-                " z ( " + str(z) + " )÷ e ( " + str(e) + " )" + str(z // e))
+                " z ( " + str(z) + " )÷ e ( " + str(e) + " ) = " + str(z // e))
