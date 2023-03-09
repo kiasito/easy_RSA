@@ -63,3 +63,9 @@ else:
                 " e ( " + str(e) + " ) は z ( " + str(z) + " ) を割ることができます。")
             st.write(
                 " z ( " + str(z) + " )÷ e ( " + str(e) + " ) = " + str(z // e))
+        else:
+            st.write(
+                "⑧　m ( p - 1 )( q - 1 )  ≡ 1 （ mod e ）となる数（ m ）を求める（1≦m≦e-1）")
+            st.write("z ( " + str(z) + " ) × m と -1 を e (" + str(
+                e) + " ) で割って、余りが等しくなる数 ( m ) を求めます。")
+            st.write("ただし、m は 1 以上、e - 1( " + str(e - 1) + "以下でないといけません。 ")
