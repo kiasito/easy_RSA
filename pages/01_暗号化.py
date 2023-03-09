@@ -31,18 +31,15 @@ p = st.selectbox("素数 p を選択してください", sp)
 st.write("④　0~100 内の素数( q )を選択")
 q = st.selectbox("素数 q を選択してください", sq)
 
-if p == q:
+if p != q:
     st.write("pとqが同じ数字のため、暗号化を実行できません。pとqは別々の数字にしてください。")
- else:
-
-     n = p * q
-
-     st.write("⑤　n = p q　n を求めます。")
-     st.write(
-         "p ( " + str(p) + " ) × q ( " + str(q) + " ) のため、 n は" + str(
-             n) + "になります。")
-
-     z = (p - 1) * (q - 1)
-     st.write("⑥　z = ( p - 1 ) × ( q - 1 )　を求めます。")
-     st.write(" p - 1 ( " + str(p - 1) + " ) × q - 1 ( " + str(
-         q - 1) + " ) のため、z は" + str(z) + "になります。")
+else:
+    n = p * q
+    st.write("⑤　n = p q　n を求めます。")
+    st.write(
+        "p ( " + str(p) + " ) × q ( " + str(q) + " ) のため、 n は" + str(
+            n) + "になります。")
+    z = (p - 1) * (q - 1)
+    st.write("⑥　z = ( p - 1 ) × ( q - 1 )　を求めます。")
+    st.write(" p - 1 ( " + str(p - 1) + " ) × q - 1 ( " + str(
+        q - 1) + " ) のため、z は" + str(z) + "になります。")
