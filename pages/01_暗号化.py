@@ -26,5 +26,5 @@ else:
 
     st.write("②　上記の平文を暗号化すると、「" + str(pocket_bell_text) + "」になります。")
     st.write("受け取った「公開鍵（ n、e ）」を入力してください。")
-    n = st.number_input("公開鍵( n )を入力してください。")
-    e = st.number_input("公開鍵( e )を入力してください。")
+    n = st.number_input("公開鍵( n )を入力してください。", 0)
+    e = st.number_input("公開鍵( e )を入力してください。", 0)
