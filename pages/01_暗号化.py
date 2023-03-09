@@ -77,6 +77,6 @@ else:
             st.write("→ " + str(z) + "  × m を e ( " + str(
                 e) + " ) で割った余りが" + str(-1 % e) + " になるような m を探してください。")
 
-            sm = range(1, e - 1, 1)
+            sm = range(1, e, 1)
 
             m = st.selectbox("m を選択してください", sm)
