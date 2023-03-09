@@ -10,6 +10,9 @@ st.write("")
 st.subheader("ブラウザでRSA暗号の「鍵生成」→「暗号化」→「複合」まで体験することができます")
 st.write("暗号化には便宜上ポケベル暗号を使っています")
 
+st.subheader("")
+st.subheader("暗号化")
+
 raw_text = st.text_input("暗号化したい文字列を入力")
 if str(raw_text) == "":
     st.write(
