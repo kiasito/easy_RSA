@@ -18,46 +18,46 @@ if str(raw_text) == "":
 else:
     st.write("①　あなたが暗号化したい文章は「" + raw_text + "」です。")
 
-    if st.button(label='次のステップ'):
-        pocket_bell_text = 1111
+    # if st.button(label='次のステップ'):
+    pocket_bell_text = 1111
 
-        st.write("②　上記の平文を暗号化すると、「" + str(pocket_bell_text) + "」になります。")
+    st.write("②　上記の平文を暗号化すると、「" + str(pocket_bell_text) + "」になります。")
 
-        sp = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59,
-              61, 67, 71, 73, 79, 83, 89, 97]
+    sp = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59,
+          61, 67, 71, 73, 79, 83, 89, 97]
 
-        sq = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59,
-              61, 67, 71, 73, 79, 83, 89, 97]
+    sq = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59,
+          61, 67, 71, 73, 79, 83, 89, 97]
 
-        st.write("③　0~100 内の素数( p )を選択")
-        p = st.selectbox("素数 p を選択してください", sp)
-        st.write("④　0~100 内の素数( q )を選択")
-        q = st.selectbox("素数 q を選択してください", sq)
+    st.write("③　0~100 内の素数( p )を選択")
+    p = st.selectbox("素数 p を選択してください", sp)
+    st.write("④　0~100 内の素数( q )を選択")
+    q = st.selectbox("素数 q を選択してください", sq)
 
-        if p == q:
-            st.write(
-                '<span style="color:red">【エラー】p と q が同じ数字のため、暗号化を実行できません。pとq'
-                'は別々の数字にしてください。</span>',
-                unsafe_allow_html=True)
-        else:
-            n = p * q
+    if p == q:
+        st.write(
+            '<span style="color:red">【エラー】p と q が同じ数字のため、暗号化を実行できません。pとq'
+            'は別々の数字にしてください。</span>',
+            unsafe_allow_html=True)
+    else:
+        n = p * q
 
-            st.write("⑤　n = p q　 を求めます。")
-            st.write(
-                "p ( " + str(p) + " ) × q ( " + str(q) + " ) のため、 n は " + str(
-                    n) + " になります。")
+        st.write("⑤　n = p q　 を求めます。")
+        st.write(
+            "p ( " + str(p) + " ) × q ( " + str(q) + " ) のため、 n は " + str(
+                n) + " になります。")
 
-            z = (p - 1) * (q - 1)
-            st.write("⑥　z = ( p - 1 ) × ( q - 1 )　を求めます。")
-            st.write(" p - 1 ( " + str(p - 1) + " ) × q - 1 ( " + str(
-                q - 1) + " ) のため、z は " + str(z) + " になります。")
+        z = (p - 1) * (q - 1)
+        st.write("⑥　z = ( p - 1 ) × ( q - 1 )　を求めます。")
+        st.write(" p - 1 ( " + str(p - 1) + " ) × q - 1 ( " + str(
+            q - 1) + " ) のため、z は " + str(z) + " になります。")
 
-            st.write("⑦　z (" + str(z) + " )を割ることのできない素数( e )を選んでください。")
-            se = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53,
-                  59, 61, 67, 71, 73, 79, 83, 89, 97]
+        st.write("⑦　z (" + str(z) + " )を割ることのできない素数( e )を選んでください。")
+        se = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53,
+              59, 61, 67, 71, 73, 79, 83, 89, 97]
 
-            e = st.selectbox("e を選択してください", se)
+        e = st.selectbox("e を選択してください", se)
 
-            if z % e == 0:
-                st.write(" e ( "+str(e)+" ) は z ( " + str(z) + " を割ることができます。")
-                st.write(" z ( " + str(z) + "÷ e = " + str(z//e))
+        if z % e == 0:
+            st.write(" e ( " + str(e) + " ) は z ( " + str(z) + " を割ることができます。")
+            st.write(" z ( " + str(z) + "÷ e = " + str(z // e))
