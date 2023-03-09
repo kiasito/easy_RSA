@@ -33,7 +33,7 @@ q = st.selectbox("素数 q を選択してください", sq)
 
 if p == q:
     st.write(
-        '<span style="color:red">pとqが同じ数字のため、暗号化を実行できません。pとq'
+        '<span style="color:red">【エラー】pとqが同じ数字のため、暗号化を実行できません。pとq'
         'は別々の数字にしてください。</span>',
         unsafe_allow_html=True)
 else:
