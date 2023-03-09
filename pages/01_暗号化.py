@@ -36,7 +36,7 @@ else:
 
         if p == q:
             st.write(
-                '<span style="color:red">【エラー】pとqが同じ数字のため、暗号化を実行できません。pとq'
+                '<span style="color:red">【エラー】p と q が同じ数字のため、暗号化を実行できません。pとq'
                 'は別々の数字にしてください。</span>',
                 unsafe_allow_html=True)
         else:
@@ -56,7 +56,7 @@ else:
             se = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53,
                   59, 61, 67, 71, 73, 79, 83, 89, 97]
 
-            e = st.selectbox("素数 p を選択してください", se)
+            e = st.selectbox("e を選択してください", se)
 
             if z % e == 0:
                 st.write(" e ( "+str(e)+" ) は z ( " + str(z) + " を割ることができます。")
