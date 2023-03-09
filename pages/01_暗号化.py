@@ -87,5 +87,11 @@ else:
             else:
                 st.write("⑨　m ( p - 1 )( q - 1 )  + 1　を e で割った商（ d ）を求めます")
                 d = (m * z + 1) // e
-                st.write(" d は "+str(d)+" です。")
-                st.write()
+                st.write(" d は " + str(d) + " です。")
+                st.write("")
+                st.write("公開鍵（n,e）と秘密鍵（p,q,d）の生成が完了しました。")
+                st.write("公開鍵（相手に教える値）")
+                st.write("n = " + str(n) + " 、e = " + str(e))
+                st.write("秘密鍵（教えてはいけない値 ）")
+                st.write(
+                    "p = " + str(p) + " 、q = " + str(q) + " 、d = " + str(d))
