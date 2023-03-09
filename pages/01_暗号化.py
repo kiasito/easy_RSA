@@ -40,9 +40,9 @@ else:
     n = p * q
     st.write("⑤　n = p q　n を求めます。")
     st.write(
-        "p ( " + str(p) + " ) × q ( " + str(q) + " ) のため、 n は" + str(
-            n) + "になります。")
+        "p ( " + str(p) + " ) × q ( " + str(q) + " ) のため、 n は " + str(
+            n) + " になります。")
     z = (p - 1) * (q - 1)
     st.write("⑥　z = ( p - 1 ) × ( q - 1 )　を求めます。")
     st.write(" p - 1 ( " + str(p - 1) + " ) × q - 1 ( " + str(
-        q - 1) + " ) のため、z は" + str(z) + "になります。")
+        q - 1) + " ) のため、z は " + str(z) + " になります。")
