@@ -56,6 +56,8 @@ else:
             se = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53,
                   59, 61, 67, 71, 73, 79, 83, 89, 97]
 
-            if z % se == 0:
-                st.write(" e ( "+str(se)+" ) は z ( " + str(z) + " を割ることができます。")
-                st.write(" z ( " + str(z) + "÷ e = " + str(z//se))
+            e = st.selectbox("素数 p を選択してください", se)
+
+            if z % e == 0:
+                st.write(" e ( "+str(e)+" ) は z ( " + str(z) + " を割ることができます。")
+                st.write(" z ( " + str(z) + "÷ e = " + str(z//e))
