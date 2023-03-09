@@ -27,9 +27,9 @@ sq = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67,
       73, 79, 83, 89, 97]
 
 st.write("③　0~100 内の素数( p )を選択")
-p = st.selectbox("", sp)
+p = st.selectbox(sp)
 st.write("④　0~100 内の素数( q )を選択")
-q = st.selectbox("", sq)
+q = st.selectbox(sq)
 
 # if p == q:
 #    st.write("pとqが同じ数字のため、暗号化を実行できません。pとqは別々の数字にしてください。")
