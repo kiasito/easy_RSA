@@ -38,5 +38,11 @@ q = st.selectbox("素数 q を選択してください", sq)
 
 n = p * q
 
-st.write("⑤　n = p q　n は p ( " + str(p) + " ) × q ( " + str(q) + " ) で" + str(
-    n) + "になります。")
+st.write("⑤　n = p q　n を求めます。")
+st.write(
+    "p ( " + str(p) + " ) × q ( " + str(q) + " ) のため、 n は" + str(n) + "になります。")
+
+z = (p - 1) * (q - 1)
+st.write("⑥　z = ( p - 1 ) × ( q - 1 )　を求めます。")
+st.write(" p - 1 ( " + str(p - 1) + " ) × q - 1 ( " + str(
+    q - 1) + " ) のため、z は" + str(z) + "になります。")
