@@ -79,4 +79,4 @@ else:
 
             sm = range(1, e, 1)
 
-            m = st.selectbox("m を選択してください", sm)
+            m = st.selectbox("m を選択してください（1 ≦ m ≦ " + str(e - 1) + "）", sm)
