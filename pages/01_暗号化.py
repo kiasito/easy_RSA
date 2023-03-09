@@ -74,5 +74,5 @@ else:
             st.write("「 -1 を e で割った余り 」が等しくなるような m を見つけてください")
             st.write(
                 "-1 を e (" + str(e) + " )で割った余りは " + str(-1 % e) + " です。")
-            st.write("z × m ( " + str(z) + " ) × m を e (" + str(
+            st.write("→ "str(z) + " ) × m を e (" + str(
                 e) + " ) で割った余りが" + str(-1 % e) + " になるような m を探してください。")
