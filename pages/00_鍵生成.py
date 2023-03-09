@@ -30,7 +30,7 @@ if p == q:
 else:
     n = p * q
 
-    st.write("③　n = p q　 を求めます。")
+    st.write("③　n = p q を求めます。")
     st.write(
         "p ( " + str(p) + " ) × q ( " + str(q) + " ) のため、 n は " + str(
             n) + " になります。")
