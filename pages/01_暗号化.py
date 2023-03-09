@@ -32,7 +32,10 @@ st.write("④　0~100 内の素数( q )を選択")
 q = st.selectbox("素数 q を選択してください", sq)
 
 if p == q:
-    st.write("pとqが同じ数字のため、暗号化を実行できません。pとqは別々の数字にしてください。")
+    st.write(
+        '<span style="color:red">pとqが同じ数字のため、暗号化を実行できません。pとq'
+        'は別々の数字にしてください。</span>',
+        unsafe_allow_html=True)
 else:
     n = p * q
 
