@@ -49,8 +49,8 @@ else:
 
         z = (p - 1) * (q - 1)
         st.write("⑥　z = ( p - 1 ) × ( q - 1 )　を求めます。")
-        st.write(" p - 1 =" + str(p - 1) + " )、 q - 1 =" + str(
-            q - 1) + " ) のため、z は " + str(z) + " になります。")
+        st.write(" p - 1 =" + str(p - 1) + "、 q - 1 =" + str(
+            q - 1) + " のため、z は " + str(z) + " になります。")
 
         st.write("⑦　z (" + str(z) + " )を割ることのできない素数( e )を選んでください。")
         se = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53,
@@ -59,5 +59,7 @@ else:
         e = st.selectbox("e を選択してください", se)
 
         if z % e == 0:
-            st.write(" e ( " + str(e) + " ) は z ( " + str(z) + " ) を割ることができます。")
-            st.write(" z ( " + str(z) + "÷ e = " + str(z // e))
+            st.write(
+                " e ( " + str(e) + " ) は z ( " + str(z) + " ) を割ることができます。")
+            st.write(
+                " z ( " + str(z) + " )÷ e ( " + str(e) + " )" + str(z // e))
