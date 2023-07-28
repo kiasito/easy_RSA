@@ -1,63 +1,45 @@
 import streamlit as st
+import pandas as pd
+import numpy as np
+import unicodedata
 
 st.set_page_config(page_title="RSA暗号体験（暗号化）", layout="wide")
 
-st.title("RSA暗号体験（鍵生成）")
+st.title("RSA暗号体験（暗号化）")
 st.caption("Created by Daiki Ito")
 st.write("")
 st.subheader("ブラウザでRSA暗号の「鍵生成」→「暗号化」→「復号」まで体験することができます")
+st.write("暗号化には便宜上ポケベル暗号を使っています")
+
 st.subheader("")
-st.subheader("鍵生成")
+st.subheader("暗号化")
 
-sp = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59,
-      61, 67, 71, 73, 79, 83, 89, 97]
 
-sq = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59,
-      61, 67, 71, 73, 79, 83, 89, 97]
+def is_hiragana(ch):
+    try:
+        name = unicodedata.name(ch)
+        return "HIRAGANA LETTER" in name
+    except ValueError:
+        return False
 
-st.write("①　0~100 内の素数( p )を選択")
-p = st.selectbox("素数 p を選択してください", sp)
-st.write("②　0~100 内の素数( q )を選択")
-q = st.selectbox("素数 q を選択してください", sq)
 
-if p == q:
-    st.error("【エラー】p と q が同じ数字のため、鍵生成を実行できません。pとqは別々の数字にしてください。")
+raw_text = st.text_input("暗号化したい文字列を入力")
+
+if str(raw_text) == "":
+    st.error("【エラー】暗号化したい文字列を入力してください。")
 else:
-    n = p * q
-    z = (p - 1) * (q - 1)
-
-    st.write(f"③　n = p × q を求めます。 p ( {p} ) × q ( {q} ) のため、 n は {n} になります。")
-    st.write(f"④　z = ( p - 1 ) × ( q - 1 ) を求めます。 p - 1 = {p - 1}、 q - 1 = {q - 1} のため、z は {z} になります。")
-
-    st.write("⑤　z を割ることのできない素数( e )を選んでください。")
-    se = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53,
-          59, 61, 67, 71, 73, 79, 83, 89, 97]
-
-    e = st.selectbox("e を選択してください", se)
-
-    if z % e == 0:
-        st.error(f"e ( {e} ) は z ( {z} ) を割ることができます。")
-        st.error(f"z ( {z} ) ÷ e ( {e} ) = {z // e}")
+    if all(is_hiragana(ch) for ch in raw_text):
+        st.success("ひらがなで入力されています")
+        st.write("①　あなたが暗号化したい文章は「" + raw_text + "」です。")
     else:
-        st.write("⑥　m ( p - 1 )( q - 1 )  ≡ 1 （ mod e ）となる数（ m ）を求める（1≦m≦e-1）")
-        st.write(f"z ( {z} ) × m と -1 を e ( {e} ) で割って、余りが等しくなる数 ( m ) を求めます。")
-        st.write(f"ただし、m は 1 以上、e - 1 ( {e - 1} ) 以下でないといけません。 ( 1 ≦ m ≦ {e - 1} )")
-        st.write("つまり、「zm を e で割った余り」と「-1 を e で割った余り」が等しくなるような m を見つけてください")
-        st.write(f"-1 を e ( {e} ) で割った余りは {(-1 % e)} です。")
-        st.write(f"→ {z}  × m を e ( {e} ) で割った余りが {(-1 % e)} になるような m を探してください。")
+        st.error("【エラー】入力された文字列にはひらがな以外の文字が含まれています。")
 
-        sm = range(1, e, 1)
+    if st.button(label='次のステップ'):
+        # ポケベル暗号化関数をここで呼び出し、raw_textを暗号化
+        # pocket_bell_text = your_function_to_encrypt(raw_text)
+        pocket_bell_text = 1111  # 仮の値
 
-        m = st.selectbox("m を選択してください（1 ≦ m ≦ " + str(e - 1) + "）", sm)
-
-        if (-1 % e) != (z * m % e):
-            st.error("【エラー】「zm を e で割った余り」と「-1 を e で割った余り」が等しくありません")
-        else:
-            d = (m * z + 1) // e
-            st.write(f"⑦　m ( p - 1 )( q - 1 )  + 1 を e で割った商（ d ）を求めます。d は {d} です。")
-            st.write("")
-            st.write("公開鍵（n,e）と秘密鍵（p,q,d）の生成が完了しました。")
-            st.subheader("公開鍵（相手に教える値）")
-            st.markdown(f"<h3>n = {n}、e = {e}</h3>", unsafe_allow_html=True)
-            st.subheader("秘密鍵（教えてはいけない値 ）")
-            st.markdown(f"<h3>p = {p}、q = {q}、d = {d}</h3>", unsafe_allow_html=True)
+        st.write("②　上記の平文を暗号化すると、「" + str(pocket_bell_text) + "」になります。")
+        st.write("受け取った「公開鍵（ n、e ）」を入力してください。")
+        n = st.number_input("公開鍵( n )を入力してください。", min_value=1, value=1, step=1)
+        e = st.number_input("公開鍵( e )を入力してください。", min_value=1, value=1, step=1)
