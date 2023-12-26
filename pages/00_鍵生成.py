@@ -21,7 +21,9 @@ st.write("②　0~100 内の素数( q )を選択")
 q = st.selectbox("素数 q を選択してください", sq)
 
 if p == q:
-    st.error("【エラー】p と q が同じ数字のため、鍵生成を実行できません。pとqは別々の数字にしてください。")
+    st.error("【エラー】 p と q が同じ数字のため、鍵生成を実行できません。pとqは別々の数字にしてください。")
+elif p * q < 10:
+    st.error("【エラー】 p と q が小さすぎるため、鍵生成を実行できません。pとqは大きい数字にしてください。")
 else:
     n = p * q
     z = (p - 1) * (q - 1)
@@ -61,3 +63,6 @@ else:
             st.markdown(f"<h3>n = {n}、e = {e}</h3>", unsafe_allow_html=True)
             st.subheader("秘密鍵（教えてはいけない値 ）")
             st.markdown(f"<h3>p = {p}、q = {q}、d = {d}</h3>", unsafe_allow_html=True)
+
+st.write('ご意見・ご要望は→', 'https://forms.gle/G5sMYm7dNpz2FQtU9', 'まで')
+st.markdown('© 2022-2023 Dit-Lab.(Daiki Ito). All Rights Reserved.')
