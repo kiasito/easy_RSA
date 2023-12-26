@@ -34,7 +34,7 @@ else:
         st.warning("【エラー】リストにない文字が含まれているため、数値化できません。")
     else:
         # 平文と数値のマッピングをデータフレームで表示
-        df = pd.DataFrame({'平文': list(raw_text), 'ポケベル暗号': pocket_bell_text})
+        df = pd.DataFrame({'平文': list(raw_text), '数値': pocket_bell_text})
         st.write(df)
             
         st.write("②　上記の平文を数値化すると、「" + ' '.join(map(str, pocket_bell_text)) + "」になります。")
