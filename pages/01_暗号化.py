@@ -35,7 +35,7 @@ else:
     else:
         # 平文と数値のマッピングをデータフレームで表示
         df = pd.DataFrame({'平文': list(raw_text), '数値': pocket_bell_text})
-        st.write(df)
+        st.write(df.T)
             
         st.write("②　上記の平文を数値化すると、「" + ' '.join(map(str, pocket_bell_text)) + "」になります。")
 
