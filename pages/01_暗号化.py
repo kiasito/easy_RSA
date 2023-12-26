@@ -48,7 +48,10 @@ else:
         if st.button("暗号化実行"):
             # RSA暗号化処理
             encrypted_text = [pow(num, e, n) for num in pocket_bell_text]
-            st.write("暗号化されたテキスト：", encrypted_text)
+            
+            # 暗号化されたテキストをデータフレームで表示
+            encrypted_df = pd.DataFrame({'暗号化された数値': encrypted_text})
+            st.write(encrypted_df)
 
 st.write('ご意見・ご要望は→', 'https://forms.gle/G5sMYm7dNpz2FQtU9', 'まで')
 st.markdown('© 2022-2023 Dit-Lab.(Daiki Ito). All Rights Reserved.')
