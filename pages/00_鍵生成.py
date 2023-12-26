@@ -3,7 +3,7 @@ import streamlit as st
 st.set_page_config(page_title="RSA暗号体験（暗号化）", layout="wide")
 
 st.title("RSA暗号体験（鍵生成）")
-st.caption("Created by Daiki Ito")
+st.caption("Created by Dit-Lab.(Daiki Ito)")
 st.write("")
 st.subheader("ブラウザでRSA暗号の「鍵生成」→「暗号化」→「復号」まで体験することができます")
 st.subheader("")
