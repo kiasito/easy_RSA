@@ -31,11 +31,11 @@ else:
             unknown_chars = True
             break
     if unknown_chars:
-        st.warning("【エラー】リストにない文字が含まれているため、暗号化できません。")
+        st.warning("【エラー】リストにない文字が含まれているため、数値化できません。")
     else:
         for i, ch in enumerate(raw_text):
             st.write(f"'{ch}' → {pocket_bell_text[i]}")
-        st.write("②　上記の平文を暗号化すると、「" + ' '.join(map(str, pocket_bell_text)) + "」になります。")
+        st.write("②　上記の平文を数値化すると、「" + ' '.join(map(str, pocket_bell_text)) + "」になります。")
 
         # 公開鍵の入力
         st.write("受け取った「公開鍵（ n、e ）」を入力してください。")
