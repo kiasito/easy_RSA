@@ -49,8 +49,9 @@ else:
             # RSA暗号化処理
             encrypted_text = [pow(num, e, n) for num in pocket_bell_text]
             
-            # 暗号化されたテキストをデータフレームで表示
-            encrypted_df = pd.DataFrame({'暗号化された数値': encrypted_text})
+            # 暗号化されたテキストをデータフレームで表示（転置してカラム名を設定）
+            encrypted_df = pd.DataFrame({'暗号化された数値': encrypted_text}).T
+            encrypted_df.columns = ['文字' + str(i+1) for i in range(len(encrypted_text))]  # 新しいカラム名を設定
             st.write(encrypted_df)
 
 st.write('ご意見・ご要望は→', 'https://forms.gle/G5sMYm7dNpz2FQtU9', 'まで')
