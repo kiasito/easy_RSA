@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+from PIL import Image
 
 # Streamlitのページ設定
 st.set_page_config(page_title="RSA暗号体験（暗号化）", layout="wide")
@@ -10,6 +11,8 @@ st.caption("Created by Dit-Lab.(Daiki Ito)")
 st.write("")
 st.subheader("ブラウザでRSA暗号の「鍵生成」→「暗号化」→「復号」まで体験することができます")
 st.write("暗号化には便宜上ポケベル暗号を使っています")
+image = Image.open('ポケベル暗号.png')
+st.image(image)
 
 # ポケベル暗号リストを読み込む
 pocketbell_df = pd.read_excel("ポケベル暗号リスト.xlsx")

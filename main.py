@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+from PIL import Image
 
 st.set_page_config(page_title="RSA暗号体験", layout="wide")
 
@@ -18,6 +19,10 @@ st.write("➁　受信者は「鍵生成」ページで「秘密鍵（開ける�
 st.write("➂　受信者は「公開鍵（閉める鍵）」を送信者に渡す")
 st.write("④　送信者は、「暗号化」ページで暗号化したい文字（ねむい　等）を決める（平文）")
 st.write("※便宜上　ポケベル暗号を使用します　本来は文字コードで行われます。")
+
+image = Image.open('ポケベル暗号.png')
+st.image(image)
+
 st.write("➄　送信者は、平文を公開鍵を使って暗号化する")
 st.write("➅　送信者は、暗号化した文字を受信者に渡す")
 st.write("➆　受信者は、「復号」ページで受け取った暗号文を、秘密鍵を使って復号する")
